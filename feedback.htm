@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Телеканалы</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="channels.htm">Каналы</a></li>
+                <li><a href="favorites.htm">Избранное</a></li>
+                <li><a href="reminders.htm">Напоминания</a></li>
+                <li><a href="feedback.htm">Отзывы</a></li>
+                <li><a href="profile.htm">Профиль</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="search" placeholder="Поиск...">
+    </header>
+    <main>
+        <h1>Отзывы</h1>
+        <section id="feedback">
+    <h2>Оставьте отзыв о телеканале</h2>
+    <div class="feedback-container">
+        <label for="channel-select">Выберите канал:</label>
+        <select id="channel-select">
+            <option value="sts">СТС</option>
+            <option value="tnt">ТНТ</option>
+            <option value="rossiya1">Россия 1</option>
+            <option value="matchtv">Матч ТВ</option>
+            <option value="rentv">РЕН ТВ</option>
+        </select>
+
+        <textarea placeholder="Ваш отзыв..." class="review-input" id="review-input"></textarea>
+        <button class="submit-review" onclick="submitReview()">Отправить отзыв</button>
+        
+        <div class="reviews" id="reviews-container"></div>
+    </div>
+</section>
+
+<script>
+    // Имя пользователя (например, полученное из профиля)
+    const username = "Имя_Пользователя"; // Здесь должно быть имя пользователя из профиля
+
+    // Функция для сохранения отзывов
+    function submitReview() {
+        const channel = document.getElementById('channel-select').value;
+        const reviewInput = document.getElementById('review-input');
+        const reviewText = reviewInput.value;
+
+        if (username && reviewText) {
+            // Сохранение отзыва в локальном хранилище (localStorage)
+            let reviews = JSON.parse(localStorage.getItem(`reviews-${channel}`)) || [];
+            const review = {
+                text: reviewText,
+                user: username,
+                channel: channel,
+                time: new Date().toLocaleString()
+            };
+            reviews.push(review);
+            localStorage.setItem(`reviews-${channel}`, JSON.stringify(reviews));
+
+            // Обновление отображения отзывов
+            displayReviews(channel);
+            reviewInput.value = ''; // Очистить поле ввода
+        } else {
+            alert('Пожалуйста, введите ваш отзыв.');
+        }
+    }
+
+    // Функция для отображения отзывов
+    function displayReviews(channel) {
+        const reviewsContainer = document.getElementById('reviews-container');
+        reviewsContainer.innerHTML = ''; // Очистить текущие отзывы
+        let reviews = JSON.parse(localStorage.getItem(`reviews-${channel}`)) || [];
+        
+        reviews.forEach((review, index) => {
+            const reviewDiv = document.createElement('div');
+            reviewDiv.classList.add('review');
+            reviewDiv.innerHTML = `
+                <p><strong>${review.user}</strong> (${review.time}) - Канал: ${review.channel}: ${review.text} <button onclick="deleteReview('${channel}', ${index})">Удалить</button></p>
+            `;
+            reviewsContainer.appendChild(reviewDiv);
+        });
+    }
+
+    // Функция для удаления отзыва
+    function deleteReview(channel, index) {
+        let reviews = JSON.parse(localStorage.getItem(`reviews-${channel}`)) || [];
+        reviews.splice(index, 1); // Удаляем отзыв по индексу
+        localStorage.setItem(`reviews-${channel}`, JSON.stringify(reviews));
+        displayReviews(channel); // Обновляем отображение отзывов
+    }
+
+    // Инициализация отзывов при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+        const channelSelect = document.getElementById('channel-select');
+        const initialChannel = channelSelect.value;
+        displayReviews(initialChannel);
+
+        // Обновление отзывов при смене канала
+        channelSelect.addEventListener('change', () => {
+            const selectedChannel = channelSelect.value;
+            displayReviews(selectedChannel);
+        });
+    });
+</script>
+
+<style>
+    .feedback-container {
+        margin-top: 20px;
+    }
+    .review-input {
+        width: 100%;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .submit-review {
+        margin-top: 10px;
+    }
+    .reviews {
+        margin-top: 10px;
+    }
+    .review {
+        background-color: #f0f0f0;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+</style>
+
+
+</body>
+</html>

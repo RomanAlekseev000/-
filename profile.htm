@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Телеканалы</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="channels.htm">Каналы</a></li>
+                <li><a href="favorites.htm">Избранное</a></li>
+                <li><a href="reminders.htm">Напоминания</a></li>
+                <li><a href="feedback.htm">Отзывы</a></li>
+                <li><a href="profile.html">Профиль</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="search" placeholder="Поиск...">
+    </header>
+    <main>
+        <h1>Профиль пользователя</h1>
+        <div id="profileInfo">
+            <p><strong>Имя пользователя:</strong> <span id="profileUsername"></span></p>
+            <p><strong>Электронная почта:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Пароль:</strong> <span id="profilePassword">********</span></p>
+        </div>
+        <button id="editProfileButton">Редактировать профиль</button>
+        <div id="message"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Телеканалы. Все права защищены.</p>
+    </footer>
+    <script>
+        const profileInfo = document.getElementById('profileInfo');
+        const profileUsername = document.getElementById('profileUsername');
+        const profileEmail = document.getElementById('profileEmail');
+        const profilePassword = document.getElementById('profilePassword');
+        const messageDiv = document.getElementById('message');
+        const editProfileButton = document.getElementById('editProfileButton');
+
+        // Функция для загрузки данных профиля
+        function loadProfile() {
+            const profile = JSON.parse(localStorage.getItem('profile')) || {};
+            profileUsername.textContent = profile.username || 'Не задано';
+            profileEmail.textContent = profile.email || 'Не задано';
+            profilePassword.textContent = profile.password ? '********' : 'Не задано';
+        }
+
+        // Обработчик для кнопки редактирования профиля
+        editProfileButton.addEventListener('click', function() {
+            window.location.href = 'edit_profile.html'; // Переход на страницу редактирования профиля
+        });
+
+        // Загружаем данные профиля при загрузке страницы
+        window.onload = loadProfile;
+    </script>
+</body>
+</html>

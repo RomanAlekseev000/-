@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Телеканалы</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="channels.htm">Каналы</a></li>
+                <li><a href="favorites.htm">Избранное</a></li>
+                <li><a href="reminders.htm">Напоминания</a></li>
+                <li><a href="feedback.htm">Отзывы</a></li>
+                <li><a href="profile.htm">Профиль</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="search" placeholder="Поиск...">
+    </header>
+    <main>
+        <h1>Ваши Избранные Программы</h1>
+        <div class="favorites-container" id="favoritesContainer">
+            <!-- Избранные программы будут добавлены здесь динамически -->
+        </div>
+        <button id="addFavoriteButton" class="add-button">Добавить Избранное</button>
+        <div id="message"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Телеканалы. Все права защищены.</p>
+    </footer>
+    <script>
+        const favoritesContainer = document.getElementById('favoritesContainer');
+        const addFavoriteButton = document.getElementById('addFavoriteButton');
+        const messageDiv = document.getElementById('message');
+
+        // Функция для добавления новой избранной программы
+        function addFavorite(programName) {
+            const favoriteCard = document.createElement('div');
+            favoriteCard.className = 'favorite-card';
+
+            favoriteCard.innerHTML = `
+                <h2>${programName}</h2>
+                <button class="delete-button">Удалить</button>
+            `;
+
+            // Добавляем обработчик события для кнопки "Удалить"
+            favoriteCard.querySelector('.delete-button').addEventListener('click', () => {
+                favoritesContainer.removeChild(favoriteCard);
+                displayMessage(`Программа "${programName}" удалена из избранного.`);
+            });
+
+            favoritesContainer.appendChild(favoriteCard);
+            displayMessage(`Программа "${programName}" добавлена в избранное.`);
+        }
+
+        // Функция для отображения сообщений
+        function displayMessage(message) {
+            messageDiv.textContent = message;
+            setTimeout(() => {
+                messageDiv.textContent = '';
+            }, 3000);
+        }
+
+        // Обработчик события для кнопки "Добавить Избранное"
+        addFavoriteButton.addEventListener('click', () => {
+            const programName = prompt('Введите название программы для добавления в избранное:');
+            if (programName) {
+                addFavorite(programName);
+            } else {
+                displayMessage('Необходимо ввести название программы.');
+            }
+        });
+    </script>
+</body>
+</html>

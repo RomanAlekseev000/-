@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Напоминания</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Телеканалы</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="channels.htm">Каналы</a></li>
+                <li><a href="favorites.htm">Избранное</a></li>
+                <li><a href="reminders.htm">Напоминания</a></li>
+                <li><a href="feedback.htm">Отзывы</a></li>
+                <li><a href="profile.htm">Профиль</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="search" placeholder="Поиск...">
+    </header>
+    <main>
+        <h1>Ваши Напоминания</h1>
+        <div class="reminder-container" id="reminderContainer">
+            <!-- Напоминания будут добавлены здесь динамически -->
+        </div>
+        <button id="addReminderButton" class="add-button">Добавить Напоминание</button>
+        <div id="message"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Телеканалы. Все права защищены.</p>
+    </footer>
+    <script>
+        const reminderContainer = document.getElementById('reminderContainer');
+        const addReminderButton = document.getElementById('addReminderButton');
+        const messageDiv = document.getElementById('message');
+
+        // Функция для добавления нового напоминания
+        function addReminder(date, program) {
+            const reminderCard = document.createElement('div');
+            reminderCard.className = 'reminder-card';
+
+            reminderCard.innerHTML = `
+                <h2>Напоминание о программе</h2>
+                <p><strong>Дата и время:</strong> ${date}</p>
+                <p><strong>Программа:</strong> ${program}</p>
+                <button class="delete-button">Удалить</button>
+            `;
+
+            // Добавляем обработчик события для кнопки "Удалить"
+            reminderCard.querySelector('.delete-button').addEventListener('click', () => {
+                reminderContainer.removeChild(reminderCard);
+                displayMessage('Напоминание удалено.');
+            });
+
+            reminderContainer.appendChild(reminderCard);
+            displayMessage('Напоминание добавлено.');
+        }
+
+        // Функция для отображения сообщений
+        function displayMessage(message) {
+            messageDiv.textContent = message;
+            setTimeout(() => {
+                messageDiv.textContent = '';
+            }, 3000);
+        }
+
+        // Обработчик события для кнопки "Добавить Напоминание"
+        addReminderButton.addEventListener('click', () => {
+            const date = prompt('Введите дату и время (YYYY-MM-DD HH:MM):');
+            const program = prompt('Введите название программы:');
+            if (date && program) {
+                addReminder(date, program);
+            } else {
+                displayMessage('Необходимо ввести дату и название программы.');
+            }
+        });
+    </script>
+</body>
+</html>

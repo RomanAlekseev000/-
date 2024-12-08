@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каналы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Телеканалы</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="channels.htm">Каналы</a></li>
+                <li><a href="favorites.htm">Избранное</a></li>
+                <li><a href="reminders.htm">Напоминания</a></li>
+                <li><a href="feedback.htm">Отзывы</a></li>
+                <li><a href="profile.htm">Профиль</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="search" placeholder="Поиск...">
+    </header>
+   <main>
+    <h1>Каналы</h1>
+        <div id="channel-content" class="channel-container">
+        <!-- Карточки для СТС -->
+        <div class="channel-card" data-day="today" data-channel="sts">
+           <img src="Stsicon.jpg" alt="Канал 1" class="channel-icon">
+                <h2>СТС, сегодня 9 дек.</h2>
+                <div class="program-list">
+                    <div class="program">
+                        <span class="program-name">Уральские пельмени</span>
+                        <span class="program-time">06:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Мультики</span>
+                        <span class="program-time">08:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Кулинарные приключения</span>
+                        <span class="program-time">13:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Кухня</span>
+                        <span class="program-time">16:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Человек паук</span>
+                        <span class="program-time">20:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Человек паук 2</span>
+                        <span class="program-time">22:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Уральские пельмени</span>
+                        <span class="program-time">00:00</span>
+                    </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="sts">
+             <img src="Stsicon.jpg" alt="Канал 1" class="channel-icon">
+                <h2>СТС, завтра 10 дек.</h2>
+                <div class="program-list">
+                    <div class="program">
+                        <span class="program-name">Воронины</span>
+                        <span class="program-time">06:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Мультики</span>
+                        <span class="program-time">08:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Кулинарные приключения</span>
+                        <span class="program-time">13:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Уральские пельмени</span>
+                        <span class="program-time">16:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Кино</span>
+                        <span class="program-time">20:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Шрек</span>
+                        <span class="program-time">22:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Уральские пельмени</span>
+                        <span class="program-time">00:00</span>
+                    </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="sts">
+             <img src="Stsicon.jpg" alt="Канал 1" class="channel-icon">
+                <h2>СТС, послезавтра 11 дек.</h2>
+                <div class="program-list">
+                    <div class="program">
+                        <span class="program-name">Уральские пельмени</span>
+                        <span class="program-time">06:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Мультики</span>
+                        <span class="program-time">08:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Кулинарные приключения</span>
+                        <span class="program-time">13:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Кухня</span>
+                        <span class="program-time">16:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Шрек 2</span>
+                        <span class="program-time">20:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Шрек 3</span>
+                        <span class="program-time">22:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Уральские пельмени</span>
+                        <span class="program-time">00:00</span>
+                    </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="sts">
+            <img src="Stsicon.jpg" alt="Канал 1" class="channel-icon">
+                <h2>СТС, четверг 12 дек.</h2>
+                <div class="program-list">
+                    <div class="program">
+                        <span class="program-name">Уральские пельмени</span>
+                        <span class="program-time">06:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Мультики</span>
+                        <span class="program-time">08:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Кулинарные приключения</span>
+                        <span class="program-time">13:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Воронины</span>
+                        <span class="program-time">16:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Кухня</span>
+                        <span class="program-time">20:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Шрек 4</span>
+                        <span class="program-time">22:00</span>
+                    </div>
+                    <div class="program">
+                        <span class="program-name">Уральские пельмени</span>
+                        <span class="program-time">00:00</span>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Карточки для ТНТ -->
+        <div class="channel-card" data-day="today" data-channel="tnt">
+            <img src="tnticon.png" alt="ТНТ" class="channel-icon">
+            <h2>ТНТ, сегодня 9 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">Интерны</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Мультики</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Жуки</span>
+                    <span class="program-time">10:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Универ</span>
+                    <span class="program-time">16:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Кино</span>
+                    <span class="program-time">21:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Жуки</span>
+                    <span class="program-time">00:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="tnt">
+            <img src="tnticon.png" alt="ТНТ" class="channel-icon">
+            <h2>ТНТ, завтра 10 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">Интерны</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Мультики</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Жуки</span>
+                    <span class="program-time">10:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Универ</span>
+                    <span class="program-time">16:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Кино</span>
+                    <span class="program-time">21:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Жуки</span>
+                    <span class="program-time">00:00</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="tnt">
+             <img src="tnticon.png" alt="ТНТ" class="channel-icon">
+            <h2>ТНТ, послезавтра 11 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">Интерны</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Мультики</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Жуки</span>
+                    <span class="program-time">10:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Универ</span>
+                    <span class="program-time">16:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Кино</span>
+                    <span class="program-time">21:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Жуки</span>
+                    <span class="program-time">00:00</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="tnt">
+            <img src="tnticon.png" alt="ТНТ" class="channel-icon">
+            <h2>ТНТ, четверг 12 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">Интерны</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Мультики</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Жуки</span>
+                    <span class="program-time">10:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Универ</span>
+                    <span class="program-time">16:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Кино</span>
+                    <span class="program-time">21:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Жуки</span>
+                    <span class="program-time">00:00</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Карточки для Россия 1 -->
+        <div class="channel-card" data-day="today" data-channel="rossiya1">
+            <img src="rosicon.png" alt="Россия 1" class="channel-icon">
+            <h2>Россия 1, сегодня 9 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">Улицы разбитых фонарей</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Утренние новости</span>
+                    <span class="program-time">07:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Мухтар</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Вести</span>
+                    <span class="program-time">12:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Улицы разбитых фонарей</span>
+                    <span class="program-time">13:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Сто к одному</span>
+                    <span class="program-time">18:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Вести</span>
+                    <span class="program-time">21:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Ночное кино</span>
+                    <span class="program-time">22:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="rossiya1">
+            <img src="rosicon.png" alt="Россия 1" class="channel-icon">
+            <h2>Россия 1, завтра 10 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">Улицы разбитых фонарей</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Утренние новости</span>
+                    <span class="program-time">07:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Мухтар</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Вести</span>
+                    <span class="program-time">12:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Улицы разбитых фонарей</span>
+                    <span class="program-time">13:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Сто к одному</span>
+                    <span class="program-time">18:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Вести</span>
+                    <span class="program-time">21:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Ночное кино</span>
+                    <span class="program-time">22:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="rossiya1">
+            <img src="rosicon.png" alt="Россия 1" class="channel-icon">
+            <h2>Россия 1, послезавтра 11 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">Улицы разбитых фонарей</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Утренние новости</span>
+                    <span class="program-time">07:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Мухтар</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Вести</span>
+                    <span class="program-time">12:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Улицы разбитых фонарей</span>
+                    <span class="program-time">13:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Сто к одному</span>
+                    <span class="program-time">18:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Вести</span>
+                    <span class="program-time">21:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Ночное кино</span>
+                    <span class="program-time">22:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="rossiya1">
+           <img src="rosicon.png" alt="Россия 1" class="channel-icon">
+            <h2>Россия 1, четверг 12 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">Улицы разбитых фонарей</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Утренние новости</span>
+                    <span class="program-time">07:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Мухтар</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Вести</span>
+                    <span class="program-time">12:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Улицы разбитых фонарей</span>
+                    <span class="program-time">13:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Сто к одному</span>
+                    <span class="program-time">18:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Вести</span>
+                    <span class="program-time">21:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Ночное кино</span>
+                    <span class="program-time">22:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточки для Матч ТВ -->
+        <div class="channel-card" data-day="today" data-channel="matchtv">
+            <img src="machicon.png" alt="Матч ТВ" class="channel-icon">
+            <h2>Матч ТВ, сегодня 9 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">История спорта</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Спортивные события</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Футбол</span>
+                    <span class="program-time">10:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Волейбол</span>
+                    <span class="program-time">16:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Хоккей. Прямая трансляция</span>
+                    <span class="program-time">20:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Футбол</span>
+                    <span class="program-time">00:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="matchtv">
+            <img src="machicon.png" alt="Матч ТВ" class="channel-icon">
+            <h2>Матч ТВ, завтра 10 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">История спорта</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Спортивные события</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Футбол</span>
+                    <span class="program-time">10:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Волейбол</span>
+                    <span class="program-time">16:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Хоккей. Прямая трансляция</span>
+                    <span class="program-time">20:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Футбол</span>
+                    <span class="program-time">00:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="matchtv">
+            <img src="machicon.png" alt="Матч ТВ" class="channel-icon">
+            <h2>Матч ТВ, послезавтра 11 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">История спорта</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Спортивные события</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Футбол</span>
+                    <span class="program-time">10:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Волейбол</span>
+                    <span class="program-time">16:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Хоккей. Прямая трансляция</span>
+                    <span class="program-time">20:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Футбол</span>
+                    <span class="program-time">00:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="channel-card" data-day="today" data-channel="matchtv">
+            <img src="machicon.png" alt="Матч ТВ" class="channel-icon">
+            <h2>Матч ТВ, четверг 12 дек.</h2>
+            <div class="program-list">
+                <div class="program">
+                    <span class="program-name">История спорта</span>
+                    <span class="program-time">06:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Спортивные события</span>
+                    <span class="program-time">08:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Футбол</span>
+                    <span class="program-time">10:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Волейбол</span>
+                    <span class="program-time">16:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Хоккей. Прямая трансляция</span>
+                    <span class="program-time">20:00</span>
+                </div>
+                <div class="program">
+                    <span class="program-name">Футбол</span>
+                    <span class="program-time">00:00</span>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+        <!-- Добавьте остальные карточки каналов с соответствующими данными -->
+    </div>
+</main>
+<footer>
+        <p>&copy; 2023 Телеканалы. Все права защищены.</p>
+    </footer>
+</body>
+</html>
+
+

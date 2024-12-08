@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование профиля</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Телеканалы</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="channels.htm">Каналы</a></li>
+                <li><a href="favorites.htm">Избранное</a></li>
+                <li><a href="reminders.htm">Напоминания</a></li>
+                <li><a href="feedback.htm">Отзывы</a></li>
+                <li><a href="profile.htm">Профиль</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="search" placeholder="Поиск...">
+    </header>
+    <main>
+        <h1>Редактирование профиля</h1>
+        <form id="profileForm">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Сохранить изменения</button>
+        </form>
+        <div id="message"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Телеканалы. Все права защищены.</p>
+    </footer>
+    <script>
+        const profileForm = document.getElementById('profileForm');
+        const messageDiv = document.getElementById('message');
+
+        // Загружаем данные профиля из локального хранилища при загрузке страницы
+        window.onload = function() {
+            const profile = JSON.parse(localStorage.getItem('profile')) || {};
+            document.getElementById('username').value = profile.username || '';
+            document.getElementById('email').value = profile.email || '';
+            document.getElementById('password').value = profile.password || '';
+        };
+
+        // Обработчик отправки формы
+        profileForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем перезагрузку страницы
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Сохраняем данные профиля в локальном хранилище
+            const profile = { username, email, password };
+            localStorage.setItem('profile', JSON.stringify(profile));
+
+            // Отображаем сообщение об успешном сохранении
+            messageDiv.textContent = 'Изменения успешно сохранены!';
+            messageDiv.style.color = 'green';
+        });
+    </script>
+</body>
+</html>
